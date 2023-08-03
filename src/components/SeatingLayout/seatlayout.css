@@ -1,0 +1,30 @@
+  .seats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+}
+
+.seat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background-color: #ffc107;
+}
+
+.seat .seat-icon {
+  margin-bottom: 5px;
+}
+
+.seat .seat-number {
+  font-size: 12px;
+}
+

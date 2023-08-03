@@ -1,0 +1,65 @@
+
+
+  
+  #login .card {
+    background-color: transparent;
+    border: none;
+    background-image: linear-gradient(to bottom right, #355c7d, #6c5b7b, #c06c84);
+  }
+  
+  #login .card-body {
+    padding: 2rem;
+  }
+  
+  #login .card-body .text-white {
+    color: #fff;
+  }
+  
+  #login .card-body .form-label {
+    position: relative;
+    color: #fff;
+  }
+  
+  #login .card-body .form-label .input-icon {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: #fff;
+  }
+  
+  #login .card-body .form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+  }
+  
+  #login .card-body .form-control:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+  }
+  
+  #login .card-body .btn-success {
+    background-color: #218c74;
+    border-color: #218c74;
+  }
+  
+  #login .card-body .btn-success:hover {
+    background-color: #1a7b61;
+    border-color: #1a7b61;
+  }
+  
+  #login .card-body .btn-success:active,
+  #login .card-body .btn-success:focus {
+    background-color: #0f503b;
+    border-color: #0f503b;
+  }
+  
+  #login .card-body .btn-success:disabled {
+    background-color: #218c74;
+    border-color: #218c74;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
