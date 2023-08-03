@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./home.css";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
@@ -25,18 +26,18 @@ const Home = () => {
     fetchData();
   }, []);
 
-  const handleBookTicket = (movieId) => {
-    const isAuthenticated = localStorage.getItem("accessToken") !== null;
+  // const handleBookTicket = (movieId) => {
+  //   const isAuthenticated = localStorage.getItem("accessToken") !== null;
 
-    if (isAuthenticated) {
-      // User is logged in, allow booking ticket
-      // Redirect to the booking page with the movie ID
-      window.location.href = `/booking/${movieId}`;
-    } else {
-      // User is not logged in, show a toast message to login
-      toast.error("Please login to book tickets", { autoClose: 3000 });
-    }
-  };
+  //   if (isAuthenticated) {
+  //     // User is logged in, allow booking ticket
+  //     // Redirect to the booking page with the movie ID
+  //     window.location.href = `/booking/${movieId}`;
+  //   } else {
+  //     // User is not logged in, show a toast message to login
+  //     toast.error("Please login to book tickets", { autoClose: 3000 });
+  //   }
+  // };
 
   return (
     <section id="home" className="mt-5">
@@ -70,12 +71,23 @@ const Home = () => {
                           <strong>Description:</strong> {movie.description}
                         </li>
                       </ul>
-                      <button
+                      {/* <button
                         className="btn btn-outline-primary btn-sm"
                         onClick={() => handleBookTicket(movie.id)}
                       >
                         Book Tickets
-                      </button>
+                      </button> */}
+
+                      {authStatus && (
+                        <>
+                          <Link
+                            to={"/booking/" + movie.id}
+                            className="btn btn-outline-primary btn-sm"
+                          >
+                            Book Ticket
+                          </Link>
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
