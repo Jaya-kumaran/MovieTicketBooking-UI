@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import axios from "axios";
 import "react-toastify/dist/ReactToastify.css";
 import "./home.css";
 import { Link } from "react-router-dom";
+import { AuthStatus } from "../../context/context";
 
 const Home = () => {
   const [movieList, setMovieList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { authStatus } = useContext(AuthStatus);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -78,7 +80,7 @@ const Home = () => {
                         Book Tickets
                       </button> */}
 
-                      {authStatus && (
+                      {authStatus ? (
                         <>
                           <Link
                             to={"/booking/" + movie.id}
@@ -86,6 +88,10 @@ const Home = () => {
                           >
                             Book Ticket
                           </Link>
+                        </>
+                      ) : (
+                        <>
+                          <p> Please login to book ticket </p>
                         </>
                       )}
                     </div>
